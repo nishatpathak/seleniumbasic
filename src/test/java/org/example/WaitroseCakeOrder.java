@@ -19,20 +19,23 @@ public class WaitroseCakeOrder {
     @Test//
     public void waitRose() throws InterruptedException {
         driver.get("https://www.waitrose.com/");
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[4]/div/div/div/section/div[2]/button[2]")).click();//accept cookies
-        Thread.sleep(9000);
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//*[@id=\"cms-body-content\"]/nav/span[4]/a/span")).click();//food to order
-        Thread.sleep(4000);
+        Thread.sleep(1000);
         driver.findElement(By.xpath("/html/body/div[2]/div/div[1]/main/div[2]/header/div[3]/section[1]/div/div[2]/div/div/section[3]/div/section[4]/div/section[1]")).click();//cakes to order
-        Thread.sleep(4000);
-        driver.findElement(By.className("label___3jkaq")).click();//Personalised Cakes button
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"tSr\"]/div/div[2]/button/span")).click();//load more
+        Thread.sleep(2000);
+
+        driver.findElement(By.xpath("//*[@id=\"tPp596602-706053-706054\"]/div[2]/section[1]/header/a/h2")).click();//10th birthday cake
+        Thread.sleep(3000);
+       // driver.findElement(By.xpath("//*[@id=\"tPp596602-706053-706054\"]/div[2]/section[2]/div/div/a/span")).click();//10 birthday cake
+        //Thread.sleep(5000);
+        driver.findElement(By.className("input___Q46aJ")).sendKeys("Happy birthday my girl!!");//my message is
         Thread.sleep(5000);
-        driver.findElement(By.xpath("//*[@id=\"tPp596602-706053-706054\"]/div[2]/section[2]/div/div/a/span")).click();//10 birthday cake
-        Thread.sleep(5000);
-        driver.findElement(By.className("input___1YlS1")).sendKeys("Happy BIG birthday my BIG baby girl!!");//my message is
-        Thread.sleep(5000);
-        driver.findElement(By.linkText("Add to Trolley")).click();//add to trolley
+        driver.findElement(By.id("tAbtn-596602-706053-706054")).click();//add to trolley
         Thread.sleep(5000);
     }
     @After
