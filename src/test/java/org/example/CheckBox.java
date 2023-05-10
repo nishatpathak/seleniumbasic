@@ -39,7 +39,8 @@ assertEquals(true,ans1);
     }
     @After
 
-    public void earDown(){
+    public void
+    earDown(){
         driver.close();
     }
 
